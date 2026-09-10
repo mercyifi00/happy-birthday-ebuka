@@ -212,27 +212,34 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; margin: 0; }
 .photo-stage {
   position: relative;
   width: min(980px, 100%);
-  margin: 70px auto 50px;
+  margin: 85px auto 90px;
 }
 
 .memory-photo {
+  --x: 0;
+  --y: 0;
+  --rotation: 0deg;
+  
   position: absolute;
   z-index: 5;
 
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-
 
   padding: 5px;
   background: #fffaf3;
   border: 1px solid rgba(31, 45, 39, 0.15);
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(31, 45, 39, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(31, 45, 39, 0.2);
 
   opacity: 0;
-  transform: scale(0.4) rotate(0deg);
+  transform:
+    translate(var(--x), var(--y))
+    scale(0.4) 
+    rotate(var(--rotation));
+
   transition:
     opacity 0.5s ease,
     transform 0.7s cubic-bezier(0.2, 1.4, 0.4, 1);
@@ -240,81 +247,70 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; margin: 0; }
 
 .memory-photo.show {
   opacity: 1;
+  transform:
+    translate(var(--x), var(--y))
+    scale(1)
+    rotate(var(--rotation));
 }
 
-.photo-1 {
-  top: -65px;
-  left: -40px;
-  transform: scale(0.4) rotate(-15deg);
-}
+/* Top-left */
 
-.photo-1.show {
-  transform: scale(1) rotate(-7deg);
-}
+  .photo-1 {
+    top: -55px;
+    left: 25px;
+    --rotation: -6deg;
+  }
 
-.photo-2 {
-  top: -85px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.4) rotate(5deg);
-}
+  /* Top-center */
 
-.photo-2.show {
-  transform: translateX(-50%) scale(1) rotate(3deg);
-}
+  .photo-2 {
+    top: -70px;
+    left: 50%;
+    --x: -50%;
+    --rotation: 3deg;
+  }
 
-.photo-3 {
-  bottom: -65px;
-  left: -40px;
-  transform: scale(0.4) rotate(15deg);
-}
+  /* Top-right */
 
-.photo-3.show {
-  transform: scale(1) rotate(7deg);
-}
+  .photo-3 {
+    top: -55px;
+    right: 25px;
+    --rotation: 6deg;
+  }
 
-/* Side photos */
+  /* Middle-left */
 
-.photo-4 {
-  top: 43%;
-  left: 65px;
-  transform: translateY(-50%) scale(0.4) rotate(12deg);
-}
+  .photo-4 {
+    top: 50%;
+    left: -35px;
+    --y: -50%;
+    --rotation: -5deg;
+  }
 
-.photo-4.show {
-  transform: translateY(-50%) scale(1) rotate(5deg);
-}
+  /* Middle-right */
 
-.photo-5 {
-  top: 43%;
-  right: -65px;
-  transform: translateY(-50%) scale(0.4) rotate(-12deg);
-}
+  .photo-5 {
+    top: 50%;
+    right: -35px;
+    --y: -50%;
+    --rotation: 5deg;
+  }
 
-.photo-5.show{
-  transform: translateY(-50%) scale(1) rotate(-5deg);
-}
+  /* Bottom-left */
 
-/* Bottm row */
+  .photo-6 {
+    bottom: -60px;
+    left: 18%;
+    --rotation: 5deg;
+  }
 
-.photo-6 {
-  bottom: -65px;
-  left: 15%;
-  transform: scale(0.4) rotate(14deg);
-}
+  /* Bottom-right */
 
-.photo-6.show{
-  transform: scale(1) rotate(6deg);
-}
-
-.photo-7 {
-  right: 15%;
-  bottom: -65px;
-  transform: scale(0.4) rotate(-14deg);
-}
-
-.photo-7.show {
-  transform: scale(1) rotate(-6deg);
-}
+  .photo-7 {
+    right: 18%;
+    bottom: -60px;
+    --rotation: -5deg;
+  }
 
 @media (max-width: 720px) {
   .photo-stage {
@@ -322,29 +318,23 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; margin: 0; }
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin: 55px auto 45px;
+    margin: 35px auto;
   }
 
   .birthday-banner {
     order: -1;
     width: 100%;
-    margin-bottom: 18px;
-  }
-  
-  .memory-photo {
-    position: static;
-    width: 82px;
-    height: 82px;
+    margin-bottom: 15px;
   }
 
-  .photo-1.show,
-  .photo-2.show,
-  .photo-3.show,
-  .photo-4.show,
-  .photo-5.show,
-  .photo-6.show,
-  .photo-7.show {
-    transform: scale(1) rotate(0deg);
+  .memory-photo {
+    position: static;
+    width: 85px;
+    height: 85px;
+  }
+
+  .memory-photo.show {
+    transform: scale(1) rotate(var(--rotation));
   }
 }
 
