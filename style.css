@@ -219,8 +219,8 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; margin: 0; }
   position: absolute;
   z-index: 5;
 
-  width: 135px;
-  /**height: 95px;**/
+  width: 120px;
+  height: 120px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 
@@ -243,64 +243,107 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; margin: 0; }
 }
 
 .photo-1 {
-  top: -55px;
-  left: -45px;
-  transform: scale(0.4) rotate(-16deg);
+  top: -65px;
+  left: -40px;
+  transform: scale(0.4) rotate(-15deg);
 }
 
 .photo-1.show {
-  transform: scale(1) rotate(-8deg);
+  transform: scale(1) rotate(-7deg);
 }
 
 .photo-2 {
-  top: -55px;
-  right: -45px;
-  transform: scale(0.4) rotate(15deg);
+  top: -85px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.4) rotate(5deg);
 }
 
 .photo-2.show {
-  transform: scale(1) rotate(7deg);
+  transform: translateX(-50%) scale(1) rotate(3deg);
 }
 
 .photo-3 {
-  bottom: -55px;
-  left: -35px;
-  transform: scale(0.4) rotate(14deg);
+  bottom: -65px;
+  left: -40px;
+  transform: scale(0.4) rotate(15deg);
 }
 
 .photo-3.show {
-  transform: scale(1) rotate(6deg);
+  transform: scale(1) rotate(7deg);
 }
 
+/* Side photos */
+
 .photo-4 {
-  right: -35px;
-  bottom: -55px;
-  transform: scale(0.4) rotate(-14deg);
+  top: 43%;
+  left: 65px;
+  transform: translateY(-50%) scale(0.4) rotate(12deg);
 }
 
 .photo-4.show {
+  transform: translateY(-50%) scale(1) rotate(5deg);
+}
+
+.photo-5 {
+  top: 43%;
+  right: -65px;
+  transform: translateY(-50%) scale(0.4) rotate(-12deg);
+}
+
+.photo-5.show{
+  transform: translateY(-50%) scale(1) rotate(-5deg);
+}
+
+/* Bottm row */
+
+.photo-6 {
+  bottom: -65px;
+  left: 15%;
+  transform: scale(0.4) rotate(14deg);
+}
+
+.photo-6.show{
+  transform: scale(1) rotate(6deg);
+}
+
+.photo-7 {
+  right: 15%;
+  bottom: -65px;
+  transform: scale(0.4) rotate(-14deg);
+}
+
+.photo-7.show {
   transform: scale(1) rotate(-6deg);
 }
 
 @media (max-width: 720px) {
   .photo-stage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     margin: 55px auto 45px;
   }
 
+  .birthday-banner {
+    order: -1;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  
   .memory-photo {
-    width: 65px;
-    height: 65px;
-    padding: 3px;
-    border-radius: 12px;
+    position: static;
+    width: 82px;
+    height: 82px;
   }
 
-  .photo-1,
-  .photo-3 {
-    left: -5px;
-  }
-
-  .photo-2,
-  .photo-4 {
-    right: -5px;
+  .photo-1.show,
+  .photo-2.show,
+  .photo-3.show,
+  .photo-4.show,
+  .photo-5.show,
+  .photo-6.show,
+  .photo-7.show {
+    transform: scale(1) rotate(0deg);
   }
 }
