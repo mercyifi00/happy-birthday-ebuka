@@ -5,6 +5,9 @@ const again = document.querySelector('#again');
 const canvas = document.querySelector('#confetti');
 const ctx = canvas.getContext('2d');
 const colors = ['#f0643b', '#f5c84c', '#1e7b63', '#e98b9c', '#fffaf3'];
+const birthdayMusic = document.querySelector("#birthdayMusic");
+const musicButton = document.querySelector("#musicButton");
+
 let pieces = [];
 let animationFrame;
 
@@ -65,7 +68,25 @@ function revealPhotos() {
   });
 }
 
+musicButton.addEventListener("click", () => {
+  if (birthdayMusic.paused) {
+    birthdayMusic.play();
+    musicButton.textContent = "🔊 Music on";
+    musicButton.setAttribute("aria-label", "Pause background music");
+  } else {
+    birthdayMusic.pause();
+    musicButton.textContent = "🔇 Music off";
+    musicButton.setAttribute("aria-label", "Play background music");
+  }
+});
+
 openCard.addEventListener('click', () => {
+  birthdayMusic.volume = 0.35;
+
+  birthdayMusic.play().catch(() => {
+    musicButton.textContent = "▶ Play music";
+  });
+    
   intro.classList.add('is-gone');
   setTimeout(() => {
     intro.style.display = 'none';
