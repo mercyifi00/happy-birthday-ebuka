@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6efe4" />
+  <meta name="description" content="A very slightly late birthday card for Ebuka, with love from Ebere." />
+  <title>Happy Birthday, Ebuka!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <svg class="doodle one" width="92" height="92" viewBox="0 0 92 92" fill="none" aria-hidden="true"><path d="M46 4c2 26 15 39 42 42-27 3-40 16-42 42C43 62 30 49 4 46 30 43 43 30 46 4Z" stroke="currentColor" stroke-width="3"/></svg>
+  <svg class="doodle two" width="110" height="110" viewBox="0 0 110 110" fill="none" aria-hidden="true"><path d="M55 7v96M7 55h96M21 21l68 68M89 21 21 89" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+  <svg class="doodle three" width="74" height="74" viewBox="0 0 74 74" fill="none" aria-hidden="true"><path d="M37 68c19-13 29-25 29-39 0-11-13-19-29-2C21 10 8 18 8 29c0 14 10 26 29 39Z" stroke="currentColor" stroke-width="3"/></svg>
+
+  <main>
+    <section class="intro" id="intro" aria-labelledby="intro-title">
+      <div class="envelope">
+        <span class="eyebrow">A note from Ebere · 5 days late</span>
+        <h1 id="intro-title">Ebuka, I owe you <em>two things.</em></h1>
+        <p>A proper apology and the birthday celebration you deserved five days ago. Let me start making up for it.</p>
+        <button class="open-button" id="openCard">Open your very late birthday card&nbsp; →</button>
+        <div class="tiny-note">Fair warning: confetti may be involved.</div>
+      </div>
+    </section>
+
+    <section class="reveal" id="reveal" aria-labelledby="birthday-title">
+      <div class="hero">
+        <div class="photo-stage">
+
+        <!-- Photo in the upper-left corner -->
+        <img
+          class="memory-photo photo-1"
+          src="images/ebuka-1.jpg"
+          alt="A favorite memory with Ebuka"
+        />
+
+        <!-- Photo in the upper-right corner -->
+        <img
+          class="memory-photo photo-2"
+          src="images/ebuka-2.jpg"
+          alt="Ebuka enjoying time with family"
+        />
+
+        <!-- Photo in the lower-left corner -->
+        <img
+          class="memory-photo photo-3"
+          src="images/ebuka-3.jpg"
+          alt="A happy moment with Ebuka"
+        />
+
+        <!-- Photo in the lower-right corner -->
+        <img
+          class="memory-photo photo-4"
+          src="images/ebuka-4.jpg"
+          alt="Ebuka with his family"
+        />
+
+        <!-- Your original birthday banner -->
+        <div class="birthday-banner">
+          <div class="balloon a" aria-hidden="true"></div>
+          <div class="balloon b" aria-hidden="true"></div>
+          <div class="balloon c" aria-hidden="true"></div>
+
+          <span class="kicker">
+            Officially stretching the celebration
+          </span>
+
+          <h2 id="birthday-title">
+            Happy Birthday,<br />
+            Ebuka!
+          </h2>
+
+          <p>
+            Cousin. Jokester. Family man. New dad. All-around solid human.
+          </p>
+        </div>
+
+      </div>
+
+        <div class="content-grid">
+          <article class="letter">
+            <h3>I’m sorry I missed the day.</h3>
+            <p>Happy birthday, Ebuka. I’m five days late, and I am genuinely sorry. You deserved to be celebrated on time and loudly.</p>
+            <p>You have always had my back and my sister’s too. You are one of those people who makes family feel safe, while also making sure nobody goes too long without laughing.</p>
+            <p>Watching you become a dad to your wonderful little ten-month-old, alongside the amazing Evelyn, makes it even clearer how much love you carry and how naturally you show up for the people around you.</p>
+            <p>I hope this new year of your life gives that love right back to you. May it bring you more laughter, beautiful moments with your growing family, and every good thing you deserve.</p>
+            <p>The message came late. The love absolutely did not.</p>
+            <span class="signoff">Love, Ebere ♡</span>
+          </article>
+
+          <aside class="side-stack" aria-label="Birthday extras">
+            <div class="side-card orange">
+              <div class="number">5</div>
+              <h3>days late</h3>
+              <p>So your birthday has been legally extended by five days. I don’t make the rules.</p>
+            </div>
+            <div class="side-card yellow">
+              <h3>Reasons you deserve celebrating</h3>
+              <ul>
+                <li>✓ You always have our backs</li>
+                <li>✓ You keep the family laughing</li>
+                <li>✓ You care deeply and show it</li>
+                <li>✓ You’re already an amazing dad</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <div class="footer">
+          <p>Still not enough confetti?</p>
+          <button class="again-button" id="again">Celebrate Ebuka again ✦</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
